@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+import { Layout, Menu } from 'antd';
+const { Header} = Layout;
 
-const Header = (props) => {
+const NavBar = (props) => {
     return (  
-        <div>
-            {/* <h1 className='header'>{props.title}</h1> */}
-            <Row>
-                <Col span={6}>
-                    <h1 style={StylingHeader}>{props.title}</h1>
-                </Col>
-                <Col span={6}>
-                    <h1>Home</h1>
-                </Col>
-            </Row>
-        </div>
+        <Layout className="layout">
+            <Header>
+            <div className="logo" />
+            <Menu
+                theme="dark"
+                mode="horizontal"
+                defaultSelectedKeys={['2']}
+                style={{ lineHeight: '64px' }}
+            >
+                <Menu.Item key="1">{props.title}</Menu.Item>
+                <Menu.Item key="2">home</Menu.Item>
+            </Menu>
+            </Header>
+        </Layout>
     );
 }
  
@@ -26,4 +30,4 @@ const StylingHeader ={
     fontSize : '10px'
 }
 
-export default Header;
+export default NavBar;

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import "antd/dist/antd.css";
 import './App.css';
 import Students from './components/Students'
+import Categories from './components/Categories'
 import Header from './components/Header'
 import Register from './components/Register'
-
+import {Provider} from './context'
+import NavBar from './components/Header';
 class App extends Component {
   render() {
 
@@ -25,33 +26,12 @@ class App extends Component {
     // }
 
     return (
-      <div>
-        <Register/>
-
-        {/* <p> 1 + 1 = {1 + 1}</p>
-        <p>hello, {name}</p>
-        {sayHello? <p>hello condition, {name}</p> : null}
-        {showCount? <p>{1 + 1}</p> : <p> {belum}</p>}
-        {math} */}
-        {/* <Header
-          title = "Students' list tea"
-        />
-        <Students 
-          name = "Anoplay"
-          email = "Anoplay@gmail.com"
-          phone = "08777777123"
-        />
-        <Students 
-          name = "Yada"
-          email = "yada@gmail.com"
-          phone = "08888888123"
-        />
-        <Students 
-          name = "SwilleRZ"
-          email = "sqwillerz@gmail.com"
-          phone = "08999999123"
-        /> */}
-      </div>
+          <Provider>
+              <div>
+                <NavBar tittle = "student list"/>
+                <Categories />
+              </div>
+          </Provider>
     );
   }
 }
