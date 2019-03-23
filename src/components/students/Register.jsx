@@ -38,7 +38,7 @@ import axios from 'axios'
             {getFieldDecorator('email', {
               rules: [{ required: true, message: 'Please input your email!' }],
             })(
-              <Input placeholder="email" />
+              <Input type="email" placeholder="email" />
             )}
           </Form.Item>
           <Form.Item>
@@ -58,7 +58,7 @@ import axios from 'axios'
           {getFieldDecorator('handphone', {
             rules: [{ required: true, message: 'Please input your handphone!' }],
           })(
-            <Input type="handphone" placeholder="handphone" />
+            <Input type="number" placeholder="handphone" />
           )}
         </Form.Item>
         <Form.Item>

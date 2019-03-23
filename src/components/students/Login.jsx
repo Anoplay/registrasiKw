@@ -16,21 +16,6 @@ import { authLogin } from '../../store/actions/authAction';
         if(login){
             this.props.history.push('/')
         }
-        //   this.props.authLogin(values)
-        //   const ex_link = "https://cors-anywhere.herokuapp.com/";
-        //   await axios.post(ex_link +'https://node-student.herokuapp.com/api/student/signin',{
-        //     email: values.userName,
-        //     password: values.password
-        //   })
-        //   .then(function (response) {
-        //     // localStorage.setItem('token', response.data.token);
-        //     // Storage.storeData('token', response.data.token);
-        //     console.log(response);
-        //     this.props.history.push('/')
-        //   })
-        //   .catch(function (error) {
-        //     console.log(error);
-        //   });
         }
       });
     }
