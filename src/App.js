@@ -3,10 +3,12 @@ import "antd/dist/antd.css";
 import './App.css';
 import Students from './components/students/Students'
 import AddStudents from './components/students/AddStudent'
+import Login from './components/students/Login'
+import RegisterForm from './components/students/Register'
 import EditStudents from './components/students/EditStudent'
 import Categories from './components/Categories'
 import Header from './components/Header'
-import Register from './components/Register'
+// import Register from './components/Register'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import NavBar from './components/Header';
 import About from './components/pages/about'
@@ -39,6 +41,8 @@ class App extends Component {
             <NavBar tittle = "student list"/>
             <Switch>
               <Route exact path='/' component={Students}/>
+              <Route exact path='/login' component={Login}/>
+              <Route exact path='/register' component={RegisterForm}/>
               <Route exact path='/student/add' component={AddStudents}/>
               <Route exact path='/about' component={About}/>
               <Route exact path='/student/edit/:id' component={EditStudent}/>

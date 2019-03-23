@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { authLogout } from '../store/actions/authAction'
+import {connect} from 'react-redux';
 const { Header} = Layout;
 
 
+
+
 const NavBar = (props) => {
+    const { isAuth } = props.auth
+    const { authLogout } = props
     return (  
         <Layout className="layout">
             <Header>
@@ -17,6 +23,8 @@ const NavBar = (props) => {
             >
                 <Menu.Item key="1">{props.title}</Menu.Item>
                 <Menu.Item key="2"><Link to='/'>Home</Link></Menu.Item>
+                <Menu.Item onClick={ isAuth ? () => authLogout() : () => {}} key="3"><Link to={isAuth ? "/login" : "/login"}>{ isAuth ? "Logout" : "Login" }</Link></Menu.Item>
+                <Menu.Item><Link to='/register'>Register</Link></Menu.Item>
                 <Menu.Item><Link to='/student/add'>Add Student</Link></Menu.Item>
                 <Menu.Item><Link to='/about'>About</Link></Menu.Item>
             </Menu>
@@ -34,4 +42,9 @@ const StylingHeader ={
     fontSize : '10px'
 }
 
-export default NavBar;
+const mapStateToProps = state => ({
+    auth: state.auth.auth
+});
+
+// export default NavBar;
+export default connect(mapStateToProps, { authLogout })(NavBar)
