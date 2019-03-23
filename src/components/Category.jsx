@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Menu, Dropdown, Icon } from 'antd';
-import {Consumer} from '../context'
 class Category extends Component {
     constructor(props) {
         super(props); 
@@ -29,20 +28,13 @@ class Category extends Component {
     }
 
     render() {
-        return (  
-            <Consumer>
-                {value =>{
-                    return(
-                        <Dropdown overlay={this.menu}>
-                            <a className="ant-dropdown-link" href="#">
-                              Category Menu <Icon type="down" />
-                            </a>
-                        </Dropdown>
-                    )
-                }}
-            </Consumer>
-            
-        );
+        return(
+            <Dropdown overlay={this.menu}>
+                <a className="ant-dropdown-link" href="#">
+                    Category Menu <Icon type="down" />
+                </a>
+            </Dropdown>
+        )
     }
 }
  
